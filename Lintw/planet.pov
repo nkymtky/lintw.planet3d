@@ -11,8 +11,11 @@
 #include "obj_land.inc"
 #include "obj_sea.inc"
 
+// 通常
+// +W1500 +H1500 +Oblack
+
 // 背景透過
-// +W1500 +H1500 +FN +UA +Oout
+// +W1500 +H1500 +FN +UA +Otrans
 
 // アニメーション
 // +W240 +H240 +Oanim/o +KFI0 +KFF128
@@ -25,11 +28,11 @@
 
 #local sun_dis = 100;
 #local sun_radius = 20;
-#declare SUN_PHASE_DEG = 80; // ここを変えたらlight_sourceも調整が必要
+#declare SUN_PHASE_DEG = 125; // ここを変えたらlight_sourceも調整が必要
 #local sun_loc = <sun_dis*sin(radians(SUN_PHASE_DEG)), -sun_dis*cos(radians(SUN_PHASE_DEG)), 0>; // 太陽の位置
 
 #local camera_dis = 8; // カメラの恒星からの距離
-#local camera_deg = 70; // カメラの角度
+#local camera_deg = SUN_PHASE_DEG + 45; // カメラの角度
 #local camera_loc = <camera_dis*sin(radians(camera_deg)), -camera_dis*cos(radians(camera_deg)), 0>; // カメラの位置
 
 #local waterlevel = 0.23; // 0.23
@@ -37,7 +40,6 @@
 
 #local land_base = P_LandBase(waterlevel);
 
-/*
 // 大気
 object
 {
@@ -57,7 +59,7 @@ object
 	rotate z *  PLANET_ROTATION_DEG
 	rotate PLANET_OBLIQUITY_DEG
 }
-*/
+
 // 雪
 object
 {
