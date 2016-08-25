@@ -11,14 +11,19 @@
 #include "obj_land.inc"
 #include "obj_sea.inc"
 
-// 通常
-// +W1500 +H1500 +Oblack
+/*
+[Test]
++Otest +FN -A +W500 +H500
 
-// 背景透過
-// +W1500 +H1500 +FN +UA +Otrans
+[Large Black]
++Oblack +FN +A +W1500 +H1500
 
-// アニメーション
-// +W240 +H240 +Oanim/o +KFI0 +KFF128
+[Large Transparent]
++Otransparent +FN +UA +A +W1500 +H1500
+
+[Animation]
++Oanim/o +W240 +H240 +KFI0 +KFF128
+*/
 
 // 原点に惑星、半径1とする（地動説）
 
